@@ -1,11 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Orbitron', sans-serif;
-  font-size: larger;
+  font-size: 2rem;
+  color: #fff;
 }
 
 .flex {
@@ -19,6 +21,26 @@ body {
   height: 100vh;
 }
 
-.m20 {
-  margin: 20px;
+#date {
+  margin-bottom: 20px;
+}
+
+#airportClip {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: auto;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #airportClip {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 5rem;
+  }
 }
