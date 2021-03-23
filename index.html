@@ -16,6 +16,17 @@
         <video id="airportClip" src="./assets/airport.mp4" poster="assets/airport_poster.jpg" autoplay muted></video>
     </div>
     <script src="labb11.js"></script>
+    <script>
+        /*
+            Adds background image when video ends playing.
+        */
+        const video = document.querySelector('#airportClip');
+        const container = document.querySelector('.container');
+        video.addEventListener('ended', () => {
+            video.style.display = 'none';
+            container.classList.add('bg-image');
+        })
+    </script>
 </body>
 
 </html>
