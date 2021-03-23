@@ -1,5 +1,4 @@
-const showDate = () => {
-  const date = new Date();
+const showDate = (date) => {
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
   let day = date.getDate();
@@ -8,14 +7,21 @@ const showDate = () => {
   day = day <= 9 ? `0${day}` : day;
 
   const dateFormat = `${year}-${month}-${day}`;
-  document.querySelector("#date").innerHTML = `<p>${dateFormat}</p>`;
+  document.querySelector('#date').innerHTML = `<p>${dateFormat}</p>`;
 };
 
-const showTime = () => {
-  const date = new Date();
+const showTime = (date) => {
   const time = date.toLocaleTimeString();
-  document.querySelector("#clock").innerHTML = `<p>${time}</p>`;
+  document.querySelector('#clock').innerHTML = `<p>${time}</p>`;
 };
 
-showDate();
-setInterval(showTime, 1000);
+const displayInfo = () => {
+  const date = new Date();
+
+  showDate(date);
+  showTime(date);
+
+  setTimeout(displayInfo, 500);
+};
+
+displayInfo();
